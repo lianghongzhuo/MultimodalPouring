@@ -1,9 +1,9 @@
 # Multimodal Pouring
-In this paper ([arXiv](https://arxiv.org/abs/2003.00342), [code](https://github.com/lianghongzhuo/MultimodalPouring), [video](https://youtu.be/_U7zTyS338I)), we focus on the robust and accurate estimation of liquid height for robotic pouring. However, vision-based methods often fail in occluded conditions while audio-based methods cannot work well in a noisy environment. We instead propose a multimodal pouring network (MP-Net) that is able to robustly predict liquid height by conditioning on both audition and haptics input. MP-Net is trained on a self-collected multimodal pouring dataset. This dataset contains 300 robot pouring recordings with audio and force/torque measurements for three types of target containers. We also augment the audio data by inserting robot noise. We evaluated MP-Net on our collected dataset and a wide variety of robot experiments. Both network training results and robot experiments demonstrate that MP-Net is robust against noise and changes to the task and environment. Moreover, we further combine the predicted height and force data to estimate the shape of the target container.
+In this paper, we focus on the robust and accurate estimation of liquid height for robotic pouring. However, vision-based methods often fail in occluded conditions while audio-based methods cannot work well in a noisy environment. We instead propose a multimodal pouring network (MP-Net) that is able to robustly predict liquid height by conditioning on both audition and haptics input. MP-Net is trained on a self-collected multimodal pouring dataset. This dataset contains 300 robot pouring recordings with audio and force/torque measurements for three types of target containers. We also augment the audio data by inserting robot noise. We evaluated MP-Net on our collected dataset and a wide variety of robot experiments. Both network training results and robot experiments demonstrate that MP-Net is robust against noise and changes to the task and environment. Moreover, we further combine the predicted height and force data to estimate the shape of the target container.
+
 - Project website: https://lianghongzhuo.github.io/MultimodalPouring/
 - Preprint: https://arxiv.org/abs/2003.00342
 - Video: https://youtu.be/_U7zTyS338I
-- Contact: liang@informatik.uni-hamburg.de, maxiaojian@ucla.edu
 
 ## Overview
 <div style="text-align:center">
@@ -20,6 +20,8 @@ In this paper ([arXiv](https://arxiv.org/abs/2003.00342), [code](https://github.
 <img src="images/setup.jpg" width="80%" alt="setup" style="margin-left:auto;margin-right:auto;display:block">
 </div>
 
+Please contact Hongzhuo Liang (liang[at]informatik.uni-hamburg.de) for the download link.
+
 ## Network
 <div style="text-align:center">
 <img src="images/network.jpg" width="80%" alt="network" style="margin-left:auto;margin-right:auto;display:block">
@@ -32,12 +34,13 @@ In this paper ([arXiv](https://arxiv.org/abs/2003.00342), [code](https://github.
 1. Install python packages in a new environment
     ```bash
     conda upgrade --all
-    conda create -n pouring python=3.7 numpy ipython matplotlib mayavi yaml lxml seaborn pyyaml
+    conda create -n pouring python=[PYTHON_VERSION] numpy ipython matplotlib mayavi yaml lxml seaborn pyyaml
     conda activate pouring
     conda install -c conda-forge librosa trimesh pyglet
     conda install -c conda-forge "h5py>=2.9=mpi*"
     pip install rospkg numpy-stl tensorboardx pyquaternion pyassimp==4.1.3
     ```
+    Note: PYTHON_VERSION can be 3.7 if you do not need to use this package with ROS, otherwise use 2.7 or use python at `/usr/bin/python`
 
 1. Clone and install this repository:
     ```bash

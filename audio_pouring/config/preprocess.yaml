@@ -1,0 +1,70 @@
+
+# sfft parameters
+target_frequency : 16000
+source_frequency : 44100
+n_fft : 512
+win_size : 0.032
+overlap : 0.5
+# max_audio : 0.200958791215
+max_audio : 0.5899804976438433
+
+# delete initial sound of water tapping the cup
+del_length : 0.0  # consider set to 0
+
+fixed_audio_length : 4  # audio length, unit second
+
+# netft f/t bias
+ati_ft_bias_x: 4.2
+ati_ft_bias_y: -25.3
+ati_ft_bias_z: 17
+
+ati_ft_bias_ur5_x: 3.3
+ati_ft_bias_ur5_y: -25
+ati_ft_bias_ur5_z: 25
+
+# ur5 f/t bias
+ur5_ft_bias_x: -5.4747
+ur5_ft_bias_y: 5.7189
+ur5_ft_bias_z: -53.008
+
+# force torque data mean and std
+raw:
+  ft_mean: [-8.14538735e-01, -2.78387778e+01, 1.92889741e+01, -4.81248055e-01, -9.12775075e-01, 7.71611349e-03]
+  ft_std: [2.74831571, 3.4679054, 2.19086514, 0.19055997, 0.14068632, 0.13187253]
+minus:
+  ft_mean: [-5.59302501, -1.72821327, -0.92129239, 0.15685371, -0.22249421, -0.19975282]
+  ft_std: [ 2.92745292, 3.89070404, 1.21460167, 0.2021858, 0.14606385, 0.13016289]
+# rms value for audio
+noise_rms_train: 0.0025048988114579605
+noise_rms_test: 0.002697995082327228
+# normalization params
+audio_mean : -29.5745
+audio_std : 13.0787
+
+
+# network configs
+input_audio_size : 257
+wrench_size : 6  # a message contains fx, fy, fz, tx, ty, tz
+force_samples_to_collect : 8  # collect 8 samples in a window size
+input_force_size_raw : 48  # 8 samples * (6 dim force/torque) (assert input_force_size_raw == wrench_size*force_samples_to_collect)
+input_force_size_stft : 258  # stft to the force (get it from the dataset.py after stft)
+bottle_upper : 150.0
+bottle_lower : 0.0
+scale_upper : 770.0
+scale_lower : 0.0
+
+# cup real height
+cup_height_1 : 127
+cup_height_3 : 99
+cup_height_4 : 150
+
+# topic names
+audio_topic : "/portaudio_transport"
+ur5_ft_topic : "/robotiq_ft_wrench"
+ati_ft_topic : "/netft_data"
+scale_topic : "/maul_logic/wrench"
+phasespace_topic : "/ps_owl/rigids"
+
+# bottle id list
+bottle_id_list : [1, 3, 4, 6, 7, 8, 9, 10, 11]
+# note: this id list correcponding to 1 ~ 9 in paper.
