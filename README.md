@@ -125,10 +125,11 @@ Please contact Hongzhuo Liang (liang[at]informatik.uni-hamburg.de) for the downl
 If you find this paper and code useful in your research, please consider citing:
 
 ```plain
-@article{liang2020MultimodalPouring,
-title={Robust Robotic Pouring using Audition and Haptics},
-author={Liang, Hongzhuo and Zhou, Chuangchuang and Li, Shuang and Ma, Xiaojian and Hendrich, Norman and Gerkmann, Timo and Sun, Fuchun and Zhang, Jianwei},
-journal={arXiv preprint arXiv:2003.00342},
-year={2020}
+@inproceedings{liang2020MultimodalPouring,
+  title     = {Robust Robotic Pouring using Audition and Haptics},
+  author    = {Liang, Hongzhuo and Zhou, Chuangchuang and Li, Shuang and Ma, Xiaojian and Hendrich, Norman and Gerkmann, Timo and Sun, Fuchun and Zhang, Jianwei},
+  booktitle = {IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  year      = {2020},
+  pages     = {10880-10887}
 }
 ```
